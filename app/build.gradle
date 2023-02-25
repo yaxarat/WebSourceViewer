@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
-
 }
 
 android {
@@ -59,21 +58,12 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.45"
     kapt "com.google.dagger:hilt-compiler:2.45"
 
-    //Moshi
-    implementation "com.squareup.moshi:moshi:1.14.0"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.14.0"
-
-    // Retrofit + api response helper
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
-    implementation "com.github.skydoves:sandwich:1.3.3"
-
     // Okhttp
     implementation "com.squareup.okhttp3:okhttp:4.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
 }
 
-// Allow references to generated code
+// Needed for Hilt - allows references to generated code
 kapt {
     correctErrorTypes true
 }
