@@ -1,6 +1,5 @@
 package com.example.websourceviewer.ui.common
 
-import android.util.Log
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,8 +16,6 @@ class CustomHtmlParser @Inject constructor(private val okHttpClient: OkHttpClien
     override val htmlBody: StateFlow<String> = htmlStateFlow.asStateFlow()
 
     override suspend fun requestHtmlBodyFor(url: String) {
-        Log.d("yaxar", "requestHtmlBodyFor $url")
-
         val request: Request = Request.Builder()
             .url(url)
             .build()
@@ -28,12 +25,10 @@ class CustomHtmlParser @Inject constructor(private val okHttpClient: OkHttpClien
             .enqueue(
                 object : Callback {
                     override fun onFailure(call: Call, e: IOException) {
-                        Log.d("yaxar", "onFailure")
                         htmlStateFlow.tryEmit("Error: $e")
                     }
 
                     override fun onResponse(call: Call, response: Response) {
-                        Log.d("yaxar", "onResponse: ${response.body?.toString()}")
                         htmlStateFlow.tryEmit(response.body?.string() ?: "Invalid body")
                     }
                 }

@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class LoggingInterceptor @Inject constructor() : HttpLoggingInterceptor.Logger {
     override fun log(message: String) {
-        Log.i("yaxar", message)
+        Log.i("MY_DEBUG_TAG", message)
     }
 }
