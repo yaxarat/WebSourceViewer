@@ -29,5 +29,5 @@ Enter url             |  See the source
 ![](https://user-images.githubusercontent.com/27980758/221382547-eec38746-51f5-4c49-ad68-d9d24bd151ad.png)  |  ![](https://user-images.githubusercontent.com/27980758/221382474-b4a3facf-68a3-42f5-94f7-1d9214c92ce6.png)
 
 ## Used Libraries
-* [GitHub - square/okhttp: Square’s meticulous HTTP client for the JVM, Android, and GraalVM.](https://github.com/square/okhttp)
+* [Okhttp](https://github.com/square/okhttp)
 * [Dagger Hilt](https://dagger.dev/hilt/)
